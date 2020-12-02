@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<li class="layer-area">
+    <div>信息框</div>
+    <a class="layui-btn layui-btn-primary layer-demolist" id="test1" href="javascript:;">例1</a>
+    <a class="layui-btn layui-btn-primary layer-demolist" id="test2" href="javascript:;">例2</a>
+    <a class="layui-btn layui-btn-primary layer-demolist" id="test3" href="javascript:;">例3</a>
+    <a class="layui-btn layui-btn-primary layer-demolist" id="test4" href="javascript:;">例4</a>
+    <a class="layui-btn layui-btn-primary layer-demolist" id="test5" href="javascript:;">例5</a>
+</li>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="css/layui.css" media="all">
+<script src="js/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+<script src="layer.js"></script>
+<script>
+
+    //信息框-例1
+    $('#test1').on('click', function(){
+        layer.alert('见到你真的很高兴', {icon: 6});
+    });
+
+    //信息框-例2
+    $('#test2').on('click', function(){
+        layer.msg('你确定你很帅么？', {
+            time: 0 //不自动关闭
+            ,btn: ['必须啊', '丑到爆']
+            ,yes: function(index){
+                layer.close(index);
+                layer.msg('雅蠛蝶 O.o', {
+                    icon: 6
+                    ,btn: ['嗷','嗷','嗷']
+                });
+            }
+        });
+    });
+
+    //信息框-例3
+    $('#test3').on('click', function(){
+        layer.msg('这是最常用的吧');
+    });
+
+    //信息框-例4
+    $('#test4').on('click', function(){
+        layer.msg('不开心。。', {icon: 5});
+    });
+
+    //信息框-例5
+    $('#test5').on('click', function(){
+
+        layer.msg('玩命卖萌中', function(){
+            //关闭后的操作
+            alert('卖萌没用，我又不买')
+        });
+    });
+
+</script>

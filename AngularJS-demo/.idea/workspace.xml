@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4a1c6ff-6721-4fa3-884c-fb83da195fab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/8-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jBdTxxq689Skfz7ekue0WTixUx" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\AngularJS-demo" />
+      <recent name="C:\Users\ASUS\Desktop\AngularJS-demo\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xcy\Desktop\javademo\AngularJS-demo" />
+      <recent name="C:\Users\ASUS\Desktop\AngularJS-demo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4a1c6ff-6721-4fa3-884c-fb83da195fab" name="Default Changelist" comment="" />
+      <created>1603281430796</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603281430796</updated>
+      <workItem from="1603281431950" duration="3455000" />
+      <workItem from="1603289271201" duration="856000" />
+      <workItem from="1603329341039" duration="2783000" />
+      <workItem from="1603415193528" duration="1318000" />
+      <workItem from="1603440371137" duration="149000" />
+      <workItem from="1603442569966" duration="957000" />
+      <workItem from="1603704981450" duration="134000" />
+      <workItem from="1604474065016" duration="1432000" />
+      <workItem from="1604908021580" duration="3860000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

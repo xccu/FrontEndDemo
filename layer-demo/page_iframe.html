@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li class="layer-area">
+    <div>页面层/iframe层</div>
+    <a id = "test1" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">页面层-自定义</a>
+    <a id = "test2" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">页面层-图片</a>
+    <a id = "test3" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;" id="parentIframe">iframe-子父操作</a>
+    <a id = "test4" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">iframe-多媒体</a>
+    <a id = "test5" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">iframe-禁滚动条</a>
+</li>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="css/layui.css" media="all">
+<script src="js/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+<script src="layer.js"></script>
+<script>
+
+    //页面层-自定义
+    $('#test1').on('click', function(){
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'yourclass',
+            content: '<div style="width: 300px;height: 180px">你好</div>'
+        });
+    });
+
+    //页面层-图片
+    $('#test2').on('click', function(){
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: ['auto'],
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: $('#tong')
+        });
+    });
+
+    //iframe层-父子操作
+    $('#test3').on('click', function(){
+        layer.open({
+            type: 2,
+            area: ['700px', '450px'],
+            fixed: false, //不固定
+            maxmin: true,
+            content: 'messageBox.html'
+        });
+    });
+
+    //iframe层-多媒体
+    $('#test4').on('click', function(){
+        layer.open({
+            type: 2,
+            title: false,
+            area: ['630px', '360px'],
+            shade: 0.8,
+            closeBtn: 0,
+            shadeClose: true,
+            content: '//player.youku.com/embed/XMjY3MzgzODg0'
+        });
+        layer.msg('点击任意处关闭');
+    });
+
+    //iframe层-禁滚动条
+    $('#test5').on('click', function(){
+        layer.open({
+            type: 2,
+            area: ['360px', '500px'],
+            skin: 'layui-layer-rim', //加上边框
+            content: ['mobile/', 'no']
+        });
+    });
+
+
+
+
+
+
+
+
+
+</script>
+
+

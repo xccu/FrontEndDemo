@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+    <p>输入过滤:</p>
+
+    <p><input type="text" ng-model="test"></p>
+
+    <ul>
+        <!--filter:从数组中选择一个子集-->
+        <li ng-repeat="x in names | filter:test | orderBy:'country'">
+            {{ (x.name | uppercase) + ', ' + x.country }}
+        </li>
+    </ul>
+
+</div>
+
+<!--引用外部脚本文件的controller-->
+<script src="js/namesController.js"></script>
+
+</body>
+</html>

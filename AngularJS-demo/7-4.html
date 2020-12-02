@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+    <p>循环对象:</p>
+    <ul>
+        <!--orderBy:根据某个表达式排列数组-->
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+</div>
+
+<!--引用外部脚本文件的controller-->
+<script src="js/namesController.js"></script>
+
+</body>
+</html>
