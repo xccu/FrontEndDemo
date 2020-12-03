@@ -1,8 +1,8 @@
 /*!
 
  @Name: layui
- @Description锛氱粡鍏告ā鍧楀寲鍓嶇 UI 妗嗘灦
- @License锛歁IT
+ @Description：经典模块化前端 UI 框架
+ @License：MIT
 
  */
  
@@ -10,17 +10,17 @@
   "use strict";
 
   var doc = document, config = {
-    modules: {} //璁板綍妯″潡鐗╃悊璺緞
-    ,status: {} //璁板綍妯″潡鍔犺浇鐘舵€�
-    ,timeout: 10 //绗﹀悎瑙勮寖鐨勬ā鍧楄姹傛渶闀跨瓑寰呯鏁�
-    ,event: {} //璁板綍妯″潡鑷畾涔変簨浠�
+    modules: {} //记录模块物理路径
+    ,status: {} //记录模块加载状态
+    ,timeout: 10 //符合规范的模块请求最长等待秒数
+    ,event: {} //记录模块自定义事件
   }
 
   ,Layui = function(){
-    this.v = '2.5.7'; //鐗堟湰鍙�
+    this.v = '2.5.7'; //版本号
   }
 
-  //鑾峰彇layui鎵€鍦ㄧ洰褰�
+  //获取layui所在目录
   ,getPath = function(){
     var jsPath = doc.currentScript ? doc.currentScript.src : function(){
       var js = doc.scripts
@@ -37,44 +37,44 @@
     return jsPath.substring(0, jsPath.lastIndexOf('/') + 1);
   }()
 
-  //寮傚父鎻愮ず
+  //异常提示
   ,error = function(msg){
     win.console && console.error && console.error('Layui hint: ' + msg);
   }
 
   ,isOpera = typeof opera !== 'undefined' && opera.toString() === '[object Opera]'
 
-  //鍐呯疆妯″潡
+  //内置模块
   ,modules = {
-    layer: 'modules/layer' //寮瑰眰
-    ,laydate: 'modules/laydate' //鏃ユ湡
-    ,laypage: 'modules/laypage' //鍒嗛〉
-    ,laytpl: 'modules/laytpl' //妯℃澘寮曟搸
-    ,layim: 'modules/layim' //web閫氳
-    ,layedit: 'modules/layedit' //瀵屾枃鏈紪杈戝櫒
-    ,form: 'modules/form' //琛ㄥ崟闆�
-    ,upload: 'modules/upload' //涓婁紶
-    ,transfer: 'modules/transfer' //涓婁紶
-    ,tree: 'modules/tree' //鏍戠粨鏋�
-    ,table: 'modules/table' //琛ㄦ牸
-    ,element: 'modules/element' //甯哥敤鍏冪礌鎿嶄綔
-    ,rate: 'modules/rate'  //璇勫垎缁勪欢
-    ,colorpicker: 'modules/colorpicker' //棰滆壊閫夋嫨鍣�
-    ,slider: 'modules/slider' //婊戝潡
-    ,carousel: 'modules/carousel' //杞挱
-    ,flow: 'modules/flow' //娴佸姞杞�
-    ,util: 'modules/util' //宸ュ叿鍧�
-    ,code: 'modules/code' //浠ｇ爜淇グ鍣�
-    ,jquery: 'modules/jquery' //DOM搴擄紙绗笁鏂癸級
+    layer: 'modules/layer' //弹层
+    ,laydate: 'modules/laydate' //日期
+    ,laypage: 'modules/laypage' //分页
+    ,laytpl: 'modules/laytpl' //模板引擎
+    ,layim: 'modules/layim' //web通讯
+    ,layedit: 'modules/layedit' //富文本编辑器
+    ,form: 'modules/form' //表单集
+    ,upload: 'modules/upload' //上传
+    ,transfer: 'modules/transfer' //上传
+    ,tree: 'modules/tree' //树结构
+    ,table: 'modules/table' //表格
+    ,element: 'modules/element' //常用元素操作
+    ,rate: 'modules/rate'  //评分组件
+    ,colorpicker: 'modules/colorpicker' //颜色选择器
+    ,slider: 'modules/slider' //滑块
+    ,carousel: 'modules/carousel' //轮播
+    ,flow: 'modules/flow' //流加载
+    ,util: 'modules/util' //工具块
+    ,code: 'modules/code' //代码修饰器
+    ,jquery: 'modules/jquery' //DOM库（第三方）
     
-    ,mobile: 'modules/mobile' //绉诲姩澶фā鍧� | 鑻ュ綋鍓嶄负寮€鍙戠洰褰曪紝鍒欎负绉诲姩妯″潡鍏ュ彛锛屽惁鍒欎负绉诲姩妯″潡闆嗗悎
-    ,'layui.all': '../layui.all' //PC妯″潡鍚堝苟鐗�
+    ,mobile: 'modules/mobile' //移动大模块 | 若当前为开发目录，则为移动模块入口，否则为移动模块集合
+    ,'layui.all': '../layui.all' //PC模块合并版
   };
 
-  //璁板綍鍩虹鏁版嵁
+  //记录基础数据
   Layui.prototype.cache = config;
 
-  //瀹氫箟妯″潡
+  //定义模块
   Layui.prototype.define = function(deps, factory){
     var that = this
     ,type = typeof deps === 'function'
@@ -105,7 +105,7 @@
     return that;
   };
 
-  //浣跨敤鐗瑰畾妯″潡
+  //使用特定模块
   Layui.prototype.use = function(apps, callback, exports){
     var that = this
     ,dir = config.dir = config.dir ? config.dir : getPath
@@ -113,7 +113,7 @@
 
     apps = typeof apps === 'string' ? [apps] : apps;
     
-    //濡傛灉椤甸潰宸茬粡瀛樺湪 jQuery 1.7+ 搴撲笖鎵€瀹氫箟鐨勬ā鍧椾緷璧� jQuery锛屽垯涓嶅姞杞藉唴閮� jquery 妯″潡
+    //如果页面已经存在 jQuery 1.7+ 库且所定义的模块依赖 jQuery，则不加载内部 jquery 模块
     if(window.jQuery && jQuery.fn.on){
       that.each(apps, function(index, item){
         if(item === 'jquery'){
@@ -127,10 +127,10 @@
     ,timeout = 0;
     exports = exports || [];
 
-    //闈欐€佽祫婧恏ost
+    //静态资源host
     config.host = config.host || (dir.match(/\/\/([\s\S]+?)\//)||['//'+ location.host +'/'])[0];
     
-    //鍔犺浇瀹屾瘯
+    //加载完毕
     function onScriptLoad(e, url){
       var readyRegExp = navigator.platform === 'PLaySTATION 3' ? /^complete$/ : /^(complete|loaded)$/
       if (e.type === 'load' || (readyRegExp.test((e.currentTarget || e.srcElement).readyState))) {
@@ -145,7 +145,7 @@
       }
     }
     
-    //鍥炶皟
+    //回调
     function onCallback(){
       exports.push(layui[item]);
       apps.length > 1 ?
@@ -153,7 +153,7 @@
       : ( typeof callback === 'function' && callback.apply(layui, exports) );
     }
     
-    //濡傛灉寮曞叆浜嗗畬鏁村簱锛坙ayui.all.js锛夛紝鍐呯疆鐨勬ā鍧楀垯涓嶅繀鍐嶅姞杞�
+    //如果引入了完整库（layui.all.js），内置的模块则不必再加载
     if(apps.length === 0 
     || (layui['layui.all'] && modules[item]) 
     || (!layui['layui.all'] && layui['layui.mobile'] && modules[item])
@@ -161,23 +161,23 @@
       return onCallback(), that;
     }
     
-    //鑾峰彇鍔犺浇鐨勬ā鍧� URL
-    //濡傛灉鏄唴缃ā鍧楋紝鍒欐寜鐓� dir 鍙傛暟鎷兼帴妯″潡璺緞
-    //濡傛灉鏄墿灞曟ā鍧楋紝鍒欏垽鏂ā鍧楄矾寰勫€兼槸鍚︿负 {/} 寮€澶达紝
-    //濡傛灉璺緞鍊兼槸 {/} 寮€澶达紝鍒欐ā鍧楄矾寰勫嵆涓哄悗闈㈢揣璺熺殑瀛楃銆�
-    //鍚﹀垯锛屽垯鎸夌収 base 鍙傛暟鎷兼帴妯″潡璺緞
+    //获取加载的模块 URL
+    //如果是内置模块，则按照 dir 参数拼接模块路径
+    //如果是扩展模块，则判断模块路径值是否为 {/} 开头，
+    //如果路径值是 {/} 开头，则模块路径即为后面紧跟的字符。
+    //否则，则按照 base 参数拼接模块路径
     var url = ( modules[item] ? (dir + 'lay/') 
       : (/^\{\/\}/.test(that.modules[item]) ? '' : (config.base || ''))
     ) + (that.modules[item] || item) + '.js';
     
     url = url.replace(/^\{\/\}/, '');
     
-    //濡傛灉鎵╁睍妯″潡锛堝嵆锛氶潪鍐呯疆妯″潡锛夊璞″凡缁忓瓨鍦紝鍒欎笉蹇呭啀鍔犺浇
+    //如果扩展模块（即：非内置模块）对象已经存在，则不必再加载
     if(!config.modules[item] && layui[item]){
-      config.modules[item] = url; //骞惰褰曡捣璇ユ墿灞曟ā鍧楃殑 url
+      config.modules[item] = url; //并记录起该扩展模块的 url
     }
 
-    //棣栨鍔犺浇妯″潡
+    //首次加载模块
     if(!config.modules[item]){
       var node = doc.createElement('script');
       
@@ -203,7 +203,7 @@
       }
       
       config.modules[item] = url;
-    } else { //缂撳瓨
+    } else { //缓存
       (function poll() {
         if(++timeout > config.timeout * 1000 / 4){
           return error(item + ' is not a valid module');
@@ -217,13 +217,13 @@
     return that;
   };
 
-  //鑾峰彇鑺傜偣鐨剆tyle灞炴€у€�
+  //获取节点的style属性值
   Layui.prototype.getStyle = function(node, name){
     var style = node.currentStyle ? node.currentStyle : win.getComputedStyle(node, null);
     return style[style.getPropertyValue ? 'getPropertyValue' : 'getAttribute'](name);
   };
 
-  //css澶栭儴鍔犺浇鍣�
+  //css外部加载器
   Layui.prototype.link = function(href, fn, cssname){
     var that = this
     ,link = doc.createElement('link')
@@ -245,7 +245,7 @@
 
     if(typeof fn !== 'function') return that;
     
-    //杞css鏄惁鍔犺浇瀹屾瘯
+    //轮询css是否加载完毕
     (function poll() {
       if(++timeout > config.timeout * 1000 / 100){
         return error(href + ' timeout');
@@ -258,10 +258,10 @@
     return that;
   };
   
-  //瀛樺偍妯″潡鐨勫洖璋�
+  //存储模块的回调
   config.callback = {};
   
-  //閲嶆柊鎵ц妯″潡鐨勫伐鍘傚嚱鏁�
+  //重新执行模块的工厂函数
   Layui.prototype.factory = function(modName){
     if(layui[modName]){
       return typeof config.callback[modName] === 'function' 
@@ -270,12 +270,12 @@
     }
   };
 
-  //css鍐呴儴鍔犺浇鍣�
+  //css内部加载器
   Layui.prototype.addcss = function(firename, fn, cssname){
     return layui.link(config.dir + 'css/' + firename, fn, cssname);
   };
 
-  //鍥剧墖棰勫姞杞�
+  //图片预加载
   Layui.prototype.img = function(url, callback, error) {   
     var img = new Image();
     img.src = url; 
@@ -292,7 +292,7 @@
     };  
   };
 
-  //鍏ㄥ眬閰嶇疆
+  //全局配置
   Layui.prototype.config = function(options){
     options = options || {};
     for(var key in options){
@@ -301,7 +301,7 @@
     return this;
   };
 
-  //璁板綍鍏ㄩ儴妯″潡
+  //记录全部模块
   Layui.prototype.modules = function(){
     var clone = {};
     for(var o in modules){
@@ -310,11 +310,11 @@
     return clone;
   }();
 
-  //鎷撳睍妯″潡
+  //拓展模块
   Layui.prototype.extend = function(options){
     var that = this;
 
-    //楠岃瘉妯″潡鏄惁琚崰鐢�
+    //验证模块是否被占用
     options = options || {};
     for(var o in options){
       if(that[o] || that.modules[o]){
@@ -327,7 +327,7 @@
     return that;
   };
 
-  // location.hash 璺敱瑙ｆ瀽
+  // location.hash 路由解析
   Layui.prototype.router = function(hash){
     var that = this
     ,hash = hash || location.hash
@@ -337,12 +337,12 @@
       ,hash: (hash.match(/[^#](#.*$)/) || [])[1] || ''
     };
     
-    if(!/^#\//.test(hash)) return data; //绂佹闈炶矾鐢辫鑼�
+    if(!/^#\//.test(hash)) return data; //禁止非路由规范
     hash = hash.replace(/^#\//, '');
     data.href = '/' + hash;
     hash = hash.replace(/([^#])(#.*$)/, '$1').split('/') || [];
     
-    //鎻愬彇 Hash 缁撴瀯
+    //提取 Hash 结构
     that.each(hash, function(index, item){
       /^\w+=/.test(item) ? function(){
         item = item.split('=');
@@ -353,11 +353,11 @@
     return data;
   };
   
-  //URL 瑙ｆ瀽
+  //URL 解析
   Layui.prototype.url = function(href){
     var that = this
     ,data = {
-      //鎻愬彇 url 璺緞
+      //提取 url 路径
       pathname: function(){
         var pathname = href
           ? function(){
@@ -368,7 +368,7 @@
         return pathname.replace(/^\//, '').split('/');
       }()
       
-      //鎻愬彇 url 鍙傛暟
+      //提取 url 参数
       ,search: function(){
         var obj = {}
         ,search = (href 
@@ -377,12 +377,12 @@
             return str.replace(/\#.+/, '');
           }()
           : location.search
-        ).replace(/^\?+/, '').split('&'); //鍘婚櫎 ?锛屾寜 & 鍒嗗壊鍙傛暟
+        ).replace(/^\?+/, '').split('&'); //去除 ?，按 & 分割参数
         
-        //閬嶅巻鍒嗗壊鍚庣殑鍙傛暟
+        //遍历分割后的参数
         that.each(search, function(index, item){
           var _index = item.indexOf('=')
-          ,key = function(){ //鎻愬彇 key
+          ,key = function(){ //提取 key
             if(_index < 0){
               return item.substr(0, item.length);
             } else if(_index === 0){
@@ -391,7 +391,7 @@
               return item.substr(0, _index);
             }
           }(); 
-          //鎻愬彇 value
+          //提取 value
           if(key){
             obj[key] = _index > 0 ? item.substr(_index + 1) : null;
           }
@@ -400,7 +400,7 @@
         return obj;
       }()
       
-      //鎻愬彇 Hash
+      //提取 Hash
       ,hash: that.router(function(){
         return href 
           ? ((href.match(/#.+/) || [])[0] || '')
@@ -411,14 +411,14 @@
     return data;
   };
 
-  //鏈湴鎸佷箙鎬у瓨鍌�
+  //本地持久性存储
   Layui.prototype.data = function(table, settings, storage){
     table = table || 'layui';
     storage = storage || localStorage;
     
     if(!win.JSON || !win.JSON.parse) return;
     
-    //濡傛灉settings涓簄ull锛屽垯鍒犻櫎琛�
+    //如果settings为null，则删除表
     if(settings === null){
       return delete storage[table];
     }
@@ -440,25 +440,25 @@
     return settings.key ? data[settings.key] : data;
   };
   
-  //鏈湴浼氳瘽鎬у瓨鍌�
+  //本地会话性存储
   Layui.prototype.sessionData = function(table, settings){
     return this.data(table, settings, sessionStorage);
   }
 
-  //璁惧淇℃伅
+  //设备信息
   Layui.prototype.device = function(key){
     var agent = navigator.userAgent.toLowerCase()
 
-    //鑾峰彇鐗堟湰鍙�
+    //获取版本号
     ,getVersion = function(label){
       var exp = new RegExp(label + '/([^\\s\\_\\-]+)');
       label = (agent.match(exp)||[])[1];
       return label || false;
     }
     
-    //杩斿洖缁撴灉闆�
+    //返回结果集
     ,result = {
-      os: function(){ //搴曞眰鎿嶄綔绯荤粺
+      os: function(){ //底层操作系统
         if(/windows/.test(agent)){
           return 'windows';
         } else if(/linux/.test(agent)){
@@ -469,20 +469,20 @@
           return 'mac';
         } 
       }()
-      ,ie: function(){ //ie鐗堟湰
+      ,ie: function(){ //ie版本
         return (!!win.ActiveXObject || "ActiveXObject" in win) ? (
-          (agent.match(/msie\s(\d+)/) || [])[1] || '11' //鐢变簬ie11骞舵病鏈塵sie鐨勬爣璇�
+          (agent.match(/msie\s(\d+)/) || [])[1] || '11' //由于ie11并没有msie的标识
         ) : false;
       }()
-      ,weixin: getVersion('micromessenger')  //鏄惁寰俊
+      ,weixin: getVersion('micromessenger')  //是否微信
     };
     
-    //浠绘剰鐨刱ey
+    //任意的key
     if(key && !result[key]){
       result[key] = getVersion(key);
     }
     
-    //绉诲姩璁惧
+    //移动设备
     result.android = /android/.test(agent);
     result.ios = result.os === 'ios';
     result.mobile = (result.android || result.ios) ? true : false;
@@ -490,14 +490,14 @@
     return result;
   };
 
-  //鎻愮ず
+  //提示
   Layui.prototype.hint = function(){
     return {
       error: error
     }
   };
 
-  //閬嶅巻
+  //遍历
   Layui.prototype.each = function(obj, fn){
     var key
     ,that = this;
@@ -515,7 +515,7 @@
     return that;
   };
 
-  //灏嗘暟缁勪腑鐨勫璞℃寜鍏舵煇涓垚鍛樻帓搴�
+  //将数组中的对象按其某个成员排序
   Layui.prototype.sort = function(obj, key, desc){
     var clone = JSON.parse(
       JSON.stringify(obj || [])
@@ -523,7 +523,7 @@
     
     if(!key) return clone;
     
-    //濡傛灉鏄暟瀛楋紝鎸夊ぇ灏忔帓搴忥紝濡傛灉鏄潪鏁板瓧锛屾寜瀛楀吀搴忔帓搴�
+    //如果是数字，按大小排序，如果是非数字，按字典序排序
     clone.sort(function(o1, o2){
       var isNum = /^-?\d+$/
       ,v1 = o1[key]
@@ -547,11 +547,11 @@
       }
     });
 
-    desc && clone.reverse(); //鍊掑簭
+    desc && clone.reverse(); //倒序
     return clone;
   };
 
-  //闃绘浜嬩欢鍐掓场
+  //阻止事件冒泡
   Layui.prototype.stope = function(thisEvent){
     thisEvent = thisEvent || win.event;
     try { thisEvent.stopPropagation() } catch(e){
@@ -559,7 +559,7 @@
     }
   };
 
-  //鑷畾涔夋ā鍧椾簨浠�
+  //自定义模块事件
   Layui.prototype.onevent = function(modName, events, callback){
     if(typeof modName !== 'string' 
     || typeof callback !== 'function') return this;
@@ -567,43 +567,43 @@
     return Layui.event(modName, events, null, callback);
   };
 
-  //鎵ц鑷畾涔夋ā鍧椾簨浠�
+  //执行自定义模块事件
   Layui.prototype.event = Layui.event = function(modName, events, params, fn){
     var that = this
     ,result = null
-    ,filter = (events || '').match(/\((.*)\)$/)||[] //鎻愬彇浜嬩欢杩囨护鍣ㄥ瓧绗︾粨鏋勶紝濡傦細select(xxx)
-    ,eventName = (modName + '.'+ events).replace(filter[0], '') //鑾峰彇浜嬩欢鍚嶇О锛屽锛歠orm.select
-    ,filterName = filter[1] || '' //鑾峰彇杩囨护鍣ㄥ悕绉�,锛屽锛歺xx
+    ,filter = (events || '').match(/\((.*)\)$/)||[] //提取事件过滤器字符结构，如：select(xxx)
+    ,eventName = (modName + '.'+ events).replace(filter[0], '') //获取事件名称，如：form.select
+    ,filterName = filter[1] || '' //获取过滤器名称,，如：xxx
     ,callback = function(_, item){
       var res = item && item.call(that, params);
       res === false && result === null && (result = false);
     };
     
-    //濡傛灉鍙傛暟浼犲叆鐗瑰畾瀛楃锛屽垯鎵ц绉婚櫎浜嬩欢
+    //如果参数传入特定字符，则执行移除事件
     if(params === 'LAYUI-EVENT-REMOVE'){
       delete (that.cache.event[eventName] || {})[filterName];
       return that;
     }
     
-    //娣诲姞浜嬩欢
+    //添加事件
     if(fn){
       config.event[eventName] = config.event[eventName] || {};
 
-      //杩欓噷涓嶅啀瀵瑰娆′簨浠剁洃鍚仛鏀寔锛岄伩鍏嶆洿澶氶夯鐑�
+      //这里不再对多次事件监听做支持，避免更多麻烦
       //config.event[eventName][filterName] ? config.event[eventName][filterName].push(fn) : 
       config.event[eventName][filterName] = [fn];
       return this;
     }
     
-    //鎵ц浜嬩欢鍥炶皟
+    //执行事件回调
     layui.each(config.event[eventName], function(key, item){
-      //鎵ц褰撳墠妯″潡鐨勫叏閮ㄤ簨浠�
+      //执行当前模块的全部事件
       if(filterName === '{*}'){
         layui.each(item, callback);
         return;
       }
       
-      //鎵ц鎸囧畾浜嬩欢
+      //执行指定事件
       key === '' && layui.each(item, callback);
       (filterName && key === filterName) && layui.each(item, callback);
     });
@@ -611,13 +611,13 @@
     return result;
   };
   
-  //鏂板妯″潡浜嬩欢
+  //新增模块事件
   Layui.prototype.on = function(events, modName, callback){
     var that = this;
     return that.onevent.call(that, modName, events, callback);
   }
   
-  //绉婚櫎妯″潡浜嬩欢
+  //移除模块事件
   Layui.prototype.off = function(events, modName){
     var that = this;
     return that.event.call(that, modName, events, 'LAYUI-EVENT-REMOVE');
@@ -626,3 +626,4 @@
   win.layui = new Layui();
   
 }(window);
+
