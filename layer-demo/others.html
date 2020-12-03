@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <li class="layer-area">
+        <div>其它演示</div>
+        <a id = "test1" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">默认prompt</a>
+        <a id = "test2" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">屏蔽浏览器滚动条</a>
+        <a id = "test3" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">弹出即全屏</a>
+        <a id = "test4" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">正上方</a>
+        <a class="layui-btn layer-demolist" href="test/more.html" target="_blank">更多例子</a>
+    </li>
+</head>
+<body>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="css/layui.css" media="all">
+<script src="js/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+<script src="layer.js"></script>
+<script>
+
+    //默认prompt
+    $('#test1').on('click', function(){
+        layer.prompt(function(val, index){
+            layer.msg('得到了'+val);
+            layer.close(index);
+        });
+    });
+
+    //屏蔽浏览器滚动条
+    $('#test2').on('click', function(){
+        layer.open({
+            content: '浏览器滚动条已锁',
+            scrollbar: false
+        });
+    });
+
+    //弹出即全屏
+    $('#test3').on('click', function(){
+        var index = layer.open({
+            type: 2,
+            content: 'http://layim.layui.com',
+            area: ['320px', '195px'],
+            maxmin: true
+        });
+        layer.full(index);
+    });
+
+    //正上方
+    $('#test4').on('click', function(){
+        layer.msg('灵活运用offset', {
+            offset: 't',
+            anim: 6
+        });
+    });
+
+</script>
+

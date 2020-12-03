@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li class="layer-area">
+    <div>加载层</div>
+    <a id = "test1" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">默认</a>
+    <a id = "test2" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">风格2</a>
+    <a id = "test3" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">风格3</a>
+    <a id = "test4" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">风格4</a>
+    <a id = "test5" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">打酱油</a>
+</li>
+
+</body>
+</html>
+
+
+<link rel="stylesheet" href="css/layui.css" media="all">
+<script src="js/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+<script src="layer.js"></script>
+<script>
+
+    //加载层-默认风格
+    $('#test1').on('click', function(){
+        layer.load();
+        //此处演示关闭
+        setTimeout(function(){
+            layer.closeAll('loading');
+        }, 2000);
+    });
+
+    //加载层-风格2
+    $('#test2').on('click', function(){
+        layer.load(1);
+        //此处演示关闭
+        setTimeout(function(){
+            layer.closeAll('loading');
+        }, 2000);
+    });
+
+    //加载层-风格3
+    $('#test3').on('click', function(){
+        layer.load(2);
+        //此处演示关闭
+        setTimeout(function(){
+            layer.closeAll('loading');
+        }, 2000);
+    });
+
+    //加载层-风格4
+    $('#test4').on('click', function(){
+        layer.msg('加载中', {
+            icon: 16
+            ,shade: 0.01
+        });
+    });
+
+    //打酱油
+    $('#test5').on('click', function(){
+        layer.msg('尼玛，打个酱油', {icon: 4});
+    });
+
+</script>

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9874102d-f0c4-4e9b-adc9-0044687a0eaf" name="Default Changelist" comment="" />
+    <list default="true" id="9874102d-f0c4-4e9b-adc9-0044687a0eaf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/load.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/others.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tips.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_iframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layui-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layui-demo/layer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/layer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layui-demo/官网.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/官网.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -23,6 +35,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1l5sNo4xAf5o1vM7ZjesQwcc9hh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -31,6 +44,9 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xcy\Desktop\javademo\FrontEndDemo\layer-demo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\xcy\Desktop\javademo\layer-demo" />
       <recent name="C:\Users\xcy\Desktop\javademo\layer-demo\js" />
@@ -61,10 +77,22 @@
       <workItem from="1606898250267" duration="2274000" />
       <workItem from="1606900598036" duration="1162000" />
       <workItem from="1606915269369" duration="2165000" />
+      <workItem from="1606983754519" duration="3035000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

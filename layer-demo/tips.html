@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li class="layer-area">
+    <div>tips层</div>
+    <a id = "test1" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">上</a>
+    <a id = "test2" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">右</a>
+    <a id = "test3" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">下</a>
+    <a id = "test4" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">左</a>
+    <a id = "test5" class="layui-btn layui-btn-primary layer-demolist" href="javascript:;">允许多个</a>
+</li>
+</body>
+</html>
+
+<link rel="stylesheet" href="css/layui.css" media="all">
+<script src="js/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
+<script src="layer.js"></script>
+<script>
+
+    //tips层-上
+    $('#test1').on('click', function(){
+        layer.tips('上', '#id或者.class', {
+            tips: [1, '#0FA6D8'] //还可配置颜色
+        });
+    });
+
+    //tips层-右
+    $('#test2').on('click', function(){
+        layer.tips('默认就是向右的', '#id或者.class');
+    });
+
+    //tips层-下
+    $('#test3').on('click', function(){
+        layer.tips('下', '#id或者.class', {
+            tips: 3
+        });
+    });
+
+    //tips层-左
+    $('#test4').on('click', function(){
+        layer.tips('左边么么哒', '#id或者.class', {
+            tips: [4, '#78BA32']
+        });
+    });
+
+    //tips层-不销毁之前的
+    $('#test5').on('click', function(){
+        layer.tips('不销毁之前的', '#id或者.class', {
+            tipsMore: true
+        });
+    });
+
+</script>
