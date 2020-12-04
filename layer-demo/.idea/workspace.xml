@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9874102d-f0c4-4e9b-adc9-0044687a0eaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/load.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/others.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tips.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/json/table/demo1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/json/table/demo2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/json/table/demo3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/json/upload/demoLayEdit.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/laydate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layui-demo/table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_iframe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../layui-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layui-demo/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../layui-demo/layer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/layer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../layui-demo/官网.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../layui-demo/官网.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +81,7 @@
       <workItem from="1606900598036" duration="1162000" />
       <workItem from="1606915269369" duration="2165000" />
       <workItem from="1606983754519" duration="3035000" />
+      <workItem from="1607071503811" duration="696000" />
     </task>
     <servers />
   </component>
@@ -89,7 +93,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

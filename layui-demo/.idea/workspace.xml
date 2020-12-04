@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9874102d-f0c4-4e9b-adc9-0044687a0eaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../layer-demo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/table/demo1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/table/demo2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/table/demo3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/upload/demoLayEdit.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laydate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../layer-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layer-demo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/layui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layer.html" beforeDir="false" afterPath="$PROJECT_DIR$/layer.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,18 +44,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xcy\Desktop\javademo\FrontEndDemo\layui-demo" />
+      <recent name="D:\WorkSpace\Git\FrontEndDemo\layui-demo\src" />
+      <recent name="C:\Users\xcy\Desktop\javademo\FrontEndDemo\layui-demo\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\Git\FrontEndDemo\layui-demo\src\js" />
       <recent name="D:\WorkSpace\Git\FrontEndDemo\layui-demo\src\lay" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\WorkSpace\Git\FrontEndDemo\layui-demo\src" />
-      <recent name="C:\Users\xcy\Desktop\javademo\FrontEndDemo\layui-demo\js" />
-      <recent name="C:\Users\xcy\Desktop\javademo\FrontEndDemo\layui-demo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -81,6 +84,7 @@
       <workItem from="1606915872996" duration="605000" />
       <workItem from="1606986064041" duration="630000" />
       <workItem from="1607000716576" duration="3093000" />
+      <workItem from="1607071601327" duration="2600000" />
     </task>
     <servers />
   </component>

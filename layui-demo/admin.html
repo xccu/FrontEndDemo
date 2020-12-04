@@ -48,17 +48,17 @@
         <li class="layui-nav-item layui-nav-itemed">
           <a class="" href="javascript:;">基本元素</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:";>列表一</a></dd>
             <dd><a id ="a-button" href="javascript:;">按钮</a></dd>
-            <dd><a href="javascript:";>列表三</a></dd>
+            <dd><a id ="a-form" href="javascript:";>表单</a></dd>
             <dd><a href="">超链接</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;">解决方案</a>
+          <a href="javascript:;">组件示例</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;">列表一</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a id="a-layer" href="javascript:;">弹出层</a></dd>
+            <dd><a id ="a-laydate" href="javascript:;">日期与时间选择</a></dd>
+            <dd><a id ="a-table" href="javascript:;">数据表格</a></dd>
             <dd><a href="">超链接</a></dd>
           </dl>
         </li>
@@ -92,6 +92,21 @@ $('#a-button').on('click', function(){
   $('#frame').attr('src','button.html')
 });
 
+$('#a-form').on('click', function(){
+  $('#frame').attr('src','form.html')
+});
+
+$('#a-laydate').on('click', function(){
+  $('#frame').attr('src','laydate.html')
+});
+
+$('#a-layer').on('click', function(){
+  $('#frame').attr('src','layer.html')
+});
+
+$('#a-table').on('click', function(){
+  $('#frame').attr('src','table.html')
+});
 
 </script>
 </body>
